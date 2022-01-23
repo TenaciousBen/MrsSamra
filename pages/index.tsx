@@ -439,7 +439,7 @@ const Home: NextPage = () => {
 
           <TextBlock>
             <p>
-              If you would like to donate to Dementia UK in memory of Mrs Surrinderjit Kaur Samra, then you can via this
+              If you would like to donate to Dementia UK in memory of Mrs Surrinderjit Kaur Samra, then you can via the
               button below
             </p>
           </TextBlock>
