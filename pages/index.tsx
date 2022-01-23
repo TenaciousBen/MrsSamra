@@ -121,6 +121,7 @@ const TimelineContentHeading = styled.h4`
   font-weight: normal;
   text-decoration: underline;
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 `;
 
 const MapSizer = styled.div`
