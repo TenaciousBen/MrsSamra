@@ -319,7 +319,7 @@ const Home: NextPage = () => {
         <Guttered>
           <ImageGallery>
             {images.map((src, index) => (
-              <ImageContainer>
+              <ImageContainer key={src}>
                 <img
                   src={src}
                   onClick={() => openImageViewer(index)}
