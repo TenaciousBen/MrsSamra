@@ -8,9 +8,9 @@ import TimelineContainer from "../components/Timeline/TimelineContainer";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useCallback, useState } from "react";
+import { DESKTOP_MIN_WIDTH, MOBILE_WIDTH } from "../components/Responsive";
 
-const MOBILE_WIDTH = "480px";
-const DESKTOP_MIN_WIDTH = "1024px";
+
 
 const Container = styled.div`
   display: flex;
@@ -95,8 +95,12 @@ const TextBlock = styled.div`
   }
 `;
 
-const Padder = styled.div`
-  margin-top: 1rem;
+type PadderProps = {
+	size?: number;
+}
+
+const Padder = styled.div<PadderProps>`
+  margin-top: ${props => props && props.size ? props.size : 1}rem;
 `;
 
 const Background = styled.div`
@@ -233,6 +237,7 @@ const DonateButton = styled.a`
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 150px;
+  margin-bottom: 1rem;
 
   :focus {
     box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0,
@@ -366,6 +371,7 @@ const Home: NextPage = () => {
                 </CenteredColumn>
               </TimelineContent>
             </TimelineContainer>
+        	<Padder size={3} />
           </Guttered>
         </Background>
         <Padder />
@@ -383,6 +389,24 @@ const Home: NextPage = () => {
           <AddressLine>Ilford </AddressLine>
           <AddressLine>IG1 4BX</AddressLine>
         </Guttered>
+        <Padder />
+        <Background>
+          <Guttered>
+            <SectionHeading>Donations</SectionHeading>
+
+            <TextBlock>
+              <p>
+                If you would like to donate to Dementia UK in memory of Mrs Surrinderjit Kaur Samra, then you can via
+                the button below
+              </p>
+            </TextBlock>
+
+            <DonateButton href="https://surrinderjitsamra.muchloved.com/" target="_blank">
+              Donate
+            </DonateButton>
+        	<Padder size={3} />
+          </Guttered>
+        </Background>
         <Padder />
         <Guttered>
           <GalleryHeading>Gallery</GalleryHeading>
@@ -434,24 +458,7 @@ const Home: NextPage = () => {
             <QuoteRight>&quot;</QuoteRight>
           </Guttered>
         </Background>
-        <Padder />
-        <Guttered>
-          <SectionHeading>Donations</SectionHeading>
-
-          <TextBlock>
-            <p>
-              If you would like to donate to Dementia UK in memory of Mrs Surrinderjit Kaur Samra, then you can via the
-              button below
-            </p>
-          </TextBlock>
-
-          <DonateButton href="https://surrinderjitsamra.muchloved.com/" target="_blank">
-            Donate
-          </DonateButton>
-        </Guttered>
       </Main>
-
-      <Footer />
     </Container>
   );
 };
