@@ -348,16 +348,16 @@ const Home: NextPage = () => {
         </Guttered>
         <Background>
           <Guttered>
-            <QuoteLeft>"</QuoteLeft>
+            <QuoteLeft>&quot;</QuoteLeft>
             <PunjabiQuote>ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥</PunjabiQuote>
 
             <p>Ik Onkaar Satnaam Kartaa Purakh Nirbhau Nirvair Akaal Moorat Ajooni Saibhang Gurprasaad</p>
 
             <p>
               One Universal Creator God. The Name Is Truth. Creative Being Personified. No Fear. No Hatred. Image Of The
-              Undying, Beyond Birth, Self-Existent. By Guru's Grace
+              Undying, Beyond Birth, Self-Existent. By Guru&apos;s Grace
             </p>
-            <QuoteRight>"</QuoteRight>
+            <QuoteRight>&quot;</QuoteRight>
           </Guttered>
         </Background>
 
