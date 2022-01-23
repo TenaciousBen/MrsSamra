@@ -126,6 +126,11 @@ const ImageContainer = styled.div`
   object-fit: contain;
   display: inline-block;
   padding: 1rem;
+
+  @media (max-width: ${MOBILE_WIDTH}) {
+    height: 150px;
+    width: 150px;
+  }
 `;
 
 const QuoteLeft = styled.p`
@@ -280,7 +285,7 @@ const Home: NextPage = () => {
             </TimelineContainer>
             <TimelineContainer>
               <TimelineHeader>28th January 2022 at 2:15pm</TimelineHeader>
-              <TimelineContent>
+              <TimelineContent hideLine={true}>
                 <CenteredColumn>
                   <TimelineSectionHeading>Langar (food and prayers)</TimelineSectionHeading>
                   <AddressLine>Gurdwara Dasmesh Darbar</AddressLine>

@@ -31,11 +31,13 @@ const Content = styled.div`
   margin-left: 2rem;
 `;
 
-const TimelineHeader = (props: React.PropsWithChildren<unknown>) => (
+export type TimelineContentProps = {
+  hideLine?: boolean;
+};
+
+const TimelineHeader = (props: React.PropsWithChildren<TimelineContentProps>) => (
   <Aligner>
-    <TimelineLineContainer>
-      <TimelineLine />
-    </TimelineLineContainer>
+    <TimelineLineContainer>{!props.hideLine && <TimelineLine />}</TimelineLineContainer>
     <Content>{props.children}</Content>
   </Aligner>
 );
