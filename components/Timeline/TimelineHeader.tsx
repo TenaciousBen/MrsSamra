@@ -12,7 +12,7 @@ const TimelineBullet = styled.div`
   width: ${TIMELINE_WIDTH};
   height: ${TIMELINE_WIDTH};
   border-radius: 50%;
-  background-color: #686868;
+  border: solid 5px #686868;
 `;
 
 const Content = styled.div`
