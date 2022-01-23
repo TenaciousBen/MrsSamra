@@ -17,16 +17,9 @@ const Container = styled.div`
   font-family: Roboto;
 `;
 
-const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 2rem;
-`;
-
 const Main = styled.main`
   min-height: 100vh;
   padding: 4rem 0;
-  flex: 1;
   flex-direction: column;
   align-content: center;
   align-items: center;
@@ -42,39 +35,28 @@ const CenteredColumn = styled.div`
   align-items: center;
 `;
 
+const CenteredText = styled.div`
+  text-align: center;
+`;
+
 const Logo = styled.img`
   align-self: center;
   width: 100px;
 `;
 
+const Title = styled.h1`
+  margin: 0;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+`;
+
 const HeroImage = styled.img`
   width: 800px;
+  margin-top: 2rem;
 
   @media (max-width: ${MOBILE_WIDTH}) {
     width: 100%;
   }
-`;
-
-const Guttered = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  margin-left: 25%;
-
-  @media (max-width: ${MOBILE_WIDTH}) {
-    width: 100%;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-`;
-
-const Padder = styled.div`
-  margin-top: 5rem;
-`;
-
-const Background = styled.div`
-  background-color: #f7f7f7;
 `;
 
 const DudiName = styled.h3`
@@ -89,6 +71,34 @@ const DudiName = styled.h3`
 
 const DudiYears = styled.p`
   font-size: 1.5rem;
+  color: #838383;
+`;
+
+const Guttered = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-left: 25%;
+
+  @media (max-width: ${MOBILE_WIDTH}) {
+    width: 100%;
+    margin: 0;
+  }
+`;
+
+const TextBlock = styled.div`
+  @media (max-width: ${MOBILE_WIDTH}) {
+    margin: 0 8px 0 8px;
+  }
+`;
+
+const Padder = styled.div`
+  margin-top: 5rem;
+`;
+
+const Background = styled.div`
+  background-color: #f7f7f7;
 `;
 
 const SectionHeading = styled.h2``;
@@ -217,6 +227,7 @@ const Home: NextPage = () => {
   return (
     <Container>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet" />
@@ -228,12 +239,18 @@ const Home: NextPage = () => {
       <Main>
         <Guttered>
           <Logo src="./img/Ek_onkar.svg.png" />
-          <Title>Satnaam Kartaa Purakh</Title>
+          <TextBlock>
+            <Title>Satnaam Kartaa Purakh</Title>
+          </TextBlock>
         </Guttered>
         <Guttered>
           <HeroImage src="./img/hero.jpg" />
-          <DudiName>Late Smt Surrinderjit Kaur Samra</DudiName>
-          <DudiYears>May 5th 1940 - January 6th 2022</DudiYears>
+          <TextBlock>
+            <CenteredText>
+              <DudiName>Late Smt Surrinderjit Kaur Samra</DudiName>
+              <DudiYears>May 5th 1940 - January 6th 2022</DudiYears>
+            </CenteredText>
+          </TextBlock>
         </Guttered>
         <Background>
           <Guttered>
@@ -310,10 +327,12 @@ const Home: NextPage = () => {
         </Background>
         <Guttered>
           <SectionHeading>Flowers</SectionHeading>
-          <p>
-            If you would like to send any flowers, then please send them to the below address either on the 27th or 28th
-            January by 2pm
-          </p>
+          <TextBlock>
+            <p>
+              If you would like to send any flowers, then please send them to the below address either on the 27th or
+              28th January by 2pm
+            </p>
+          </TextBlock>
           <AddressLine>Mrs Surrinderjit Kaur Samra</AddressLine>
           <AddressLine>City of London Cemetery & Crematorium</AddressLine>
           <AddressLine>Aldersbrook Road</AddressLine>
@@ -354,14 +373,16 @@ const Home: NextPage = () => {
         <Background>
           <Guttered>
             <QuoteLeft>&quot;</QuoteLeft>
-            <PunjabiQuote>ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥</PunjabiQuote>
+            <TextBlock>
+              <PunjabiQuote>ੴ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ ਨਿਰਭਉ ਨਿਰਵੈਰੁ ਅਕਾਲ ਮੂਰਤਿ ਅਜੂਨੀ ਸੈਭੰ ਗੁਰ ਪ੍ਰਸਾਦਿ ॥</PunjabiQuote>
 
-            <p>Ik Onkaar Satnaam Kartaa Purakh Nirbhau Nirvair Akaal Moorat Ajooni Saibhang Gurprasaad</p>
+              <p>Ik Onkaar Satnaam Kartaa Purakh Nirbhau Nirvair Akaal Moorat Ajooni Saibhang Gurprasaad</p>
 
-            <p>
-              One Universal Creator God. The Name Is Truth. Creative Being Personified. No Fear. No Hatred. Image Of The
-              Undying, Beyond Birth, Self-Existent. By Guru&apos;s Grace
-            </p>
+              <p>
+                One Universal Creator God. The Name Is Truth. Creative Being Personified. No Fear. No Hatred. Image Of
+                The Undying, Beyond Birth, Self-Existent. By Guru&apos;s Grace
+              </p>
+            </TextBlock>
             <QuoteRight>&quot;</QuoteRight>
           </Guttered>
         </Background>
@@ -369,9 +390,11 @@ const Home: NextPage = () => {
         <Guttered>
           <SectionHeading>Donations</SectionHeading>
 
-          <p>
-            If you would like to donate in memory of Mrs Surrinderjit Kaur Samra, then you can via this button below:{" "}
-          </p>
+          <TextBlock>
+            <p>
+              If you would like to donate in memory of Mrs Surrinderjit Kaur Samra, then you can via this button below:{" "}
+            </p>
+          </TextBlock>
 
           <DonateButton href="https://surrinderjitsamra.muchloved.com/" target="_blank">
             Donate
