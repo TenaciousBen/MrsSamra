@@ -9,6 +9,7 @@ import ImageViewer from "react-simple-image-viewer";
 import { useCallback, useState } from "react";
 
 const MOBILE_WIDTH = "480px";
+const DESKTOP_MIN_WIDTH = "1024px";
 
 const Container = styled.div`
   display: flex;
@@ -123,6 +124,14 @@ const MapSizer = styled.div`
   }
 `;
 
+const GalleryHeading = styled.h2`
+  margin-bottom: 0.5rem;
+`;
+
+const Subtitle = styled.small`
+  color: #838383;
+`;
+
 const ImageGallery = styled.div`
   display: flex;
   flex-direction: row;
@@ -167,6 +176,20 @@ const QuoteRight = styled.p`
 const PunjabiQuote = styled.p`
   font-size: 2rem;
   font-weight: bold;
+`;
+
+const MobileOnly = styled.div`
+  display: inline;
+  @media (min-width: ${DESKTOP_MIN_WIDTH}) {
+    display: none;
+  }
+`;
+
+const DesktopOnly = styled.div`
+  display: inline;
+  @media (max-width: ${DESKTOP_MIN_WIDTH}) {
+    display: none;
+  }
 `;
 
 const DonateButton = styled.a`
@@ -252,7 +275,7 @@ const Home: NextPage = () => {
             </CenteredText>
           </TextBlock>
         </Guttered>
-		<Padder />
+        <Padder />
         <Background>
           <Guttered>
             <SectionHeading>Service</SectionHeading>
@@ -325,7 +348,7 @@ const Home: NextPage = () => {
             </TimelineContainer>
           </Guttered>
         </Background>
-		<Padder />
+        <Padder />
         <Guttered>
           <SectionHeading>Flowers</SectionHeading>
           <TextBlock>
@@ -342,6 +365,11 @@ const Home: NextPage = () => {
         </Guttered>
         <Padder />
         <Guttered>
+          <GalleryHeading>Gallery</GalleryHeading>
+          <Subtitle>
+            <MobileOnly>Tap</MobileOnly>
+            <DesktopOnly>Click</DesktopOnly> to enlarge
+          </Subtitle>
           <ImageGallery>
             {images.map((src, index) => (
               <ImageContainer key={src}>
@@ -371,7 +399,7 @@ const Home: NextPage = () => {
             )}
           </ImageGallery>
         </Guttered>
-		<Padder />
+        <Padder />
         <Background>
           <Guttered>
             <QuoteLeft>&quot;</QuoteLeft>
@@ -388,7 +416,7 @@ const Home: NextPage = () => {
             <QuoteRight>&quot;</QuoteRight>
           </Guttered>
         </Background>
-		<Padder />
+        <Padder />
         <Guttered>
           <SectionHeading>Donations</SectionHeading>
 
