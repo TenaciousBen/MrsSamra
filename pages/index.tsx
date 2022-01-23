@@ -32,7 +32,7 @@ const Main = styled.main`
   width: 100%;
 
   @media (max-width: ${MOBILE_WIDTH}) {
-	  padding: 0;
+    padding: 0;
   }
 `;
 
@@ -50,7 +50,7 @@ const HeroImage = styled.img`
   width: 800px;
 
   @media (max-width: ${MOBILE_WIDTH}) {
-	  width: 100%;
+    width: 100%;
   }
 `;
 
@@ -63,7 +63,8 @@ const Guttered = styled.div`
 
   @media (max-width: ${MOBILE_WIDTH}) {
     width: 100%;
-    margin-left: 0;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 `;
 
@@ -81,7 +82,7 @@ const DudiName = styled.h3`
   text-align: center;
 
   @media (max-width: ${MOBILE_WIDTH}) {
-  font-size: 2rem;
+    font-size: 2rem;
   }
 `;
 
@@ -106,10 +107,31 @@ const MapSizer = styled.div`
   height: 400px;
 
   @media (max-width: ${MOBILE_WIDTH}) {
-	  width: 300px;
-	  height: 300px;
+    width: 300px;
+    height: 300px;
   }
 `;
+
+const images = [...Array(18).keys()].map((i) => ({ image: `./img/${i}.jpg` }));
+const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 5,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 const Home: NextPage = () => {
   return (
@@ -209,6 +231,13 @@ const Home: NextPage = () => {
             If you would like to send any flowers, then please send them to the below address either on the 27th or 28th
             January by 2pm
           </p>
+          <AddressLine>Mrs Surrinderjit Kaur Samra</AddressLine>
+          <AddressLine>City of London Cemetery & Crematorium</AddressLine>
+          <AddressLine>Aldersbrook Road</AddressLine>
+          <AddressLine>London </AddressLine>
+          <AddressLine>E12 5DQ</AddressLine>
+        </Guttered>
+        <Guttered>
         </Guttered>
 
         {/* 
