@@ -95,7 +95,7 @@ const TextBlock = styled.div`
 `;
 
 const Padder = styled.div`
-  margin-top: 5rem;
+  margin-top: 1rem;
 `;
 
 const Background = styled.div`
@@ -112,7 +112,13 @@ const MapSpacer = styled.div`
   padding-top: 0.5rem;
 `;
 
-const TimelineSectionHeading = styled.h3``;
+const TimelineSectionHeading = styled.h3`
+  font-weight: normal;
+  text-decoration: underline;
+  margin: 0;
+`;
+
+const TimelineContentHeading = styled.h4``;
 
 const MapSizer = styled.div`
   width: 600px;
@@ -193,9 +199,6 @@ const DesktopOnly = styled.div`
 `;
 
 const DonateButton = styled.a`
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #405cf5;
@@ -236,7 +239,7 @@ const DonateButton = styled.a`
 const Home: NextPage = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const images = [...Array(13).keys()].map((i) => `./img/${i + 1}.jpg`);
+  const images = [...Array(30).keys()].map((i) => `./img/${i + 1}.jpg`);
 
   const openImageViewer = useCallback((index) => {
     setCurrentImage(index);
@@ -261,9 +264,20 @@ const Home: NextPage = () => {
       </Head>
       <Main>
         <Guttered>
+          <MobileOnly>
+            <Padder />
+            <Padder />
+            <Padder />
+          </MobileOnly>
           <Logo src="./img/Ek_onkar.svg.png" />
           <TextBlock>
-            <Title>Satnaam Kartaa Purakh</Title>
+            <CenteredText>
+              <Title>Ghale aavahi naankaa sade uthee jaahi.</Title>
+              <Subtitle>
+                O Nanak! All of us come to this world when sent by the Divine, and depart from the world when called
+                back by Him.
+              </Subtitle>
+            </CenteredText>
           </TextBlock>
         </Guttered>
         <Guttered>
@@ -280,10 +294,12 @@ const Home: NextPage = () => {
           <Guttered>
             <SectionHeading>Service</SectionHeading>
             <TimelineContainer>
-              <TimelineHeader>28th January 2022 at 2:15pm</TimelineHeader>
+              <TimelineHeader>
+                <TimelineSectionHeading>28th January 2022 at 2:15pm</TimelineSectionHeading>
+              </TimelineHeader>
               <TimelineContent>
                 <CenteredColumn>
-                  <TimelineSectionHeading>Prayers</TimelineSectionHeading>
+                  <TimelineContentHeading>Prayers</TimelineContentHeading>
                   <AddressLine>Gurdwara Dasmesh Darbar</AddressLine>
                   <AddressLine>Rosebery Ave</AddressLine>
                   <AddressLine>London</AddressLine>
@@ -302,10 +318,13 @@ const Home: NextPage = () => {
               </TimelineContent>
             </TimelineContainer>
             <TimelineContainer>
-              <TimelineHeader>28th January 2022 at 3:00pm</TimelineHeader>
+              <TimelineHeader>
+                <TimelineSectionHeading>28th January 2022 at 3:00pm</TimelineSectionHeading>
+              </TimelineHeader>
               <TimelineContent>
                 <CenteredColumn>
-                  <TimelineSectionHeading>Service</TimelineSectionHeading>
+                  <TimelineContentHeading>Service</TimelineContentHeading>
+                  <AddressLine>North Chapel</AddressLine>
                   <AddressLine>City of London Cemetery & Crematorium</AddressLine>
                   <AddressLine>Aldersbrook Road</AddressLine>
                   <AddressLine>London</AddressLine>
@@ -324,10 +343,12 @@ const Home: NextPage = () => {
               </TimelineContent>
             </TimelineContainer>
             <TimelineContainer>
-              <TimelineHeader>28th January 2022 at 2:15pm</TimelineHeader>
+              <TimelineHeader>
+                <TimelineSectionHeading>28th January 2022 at 4:00pm</TimelineSectionHeading>
+              </TimelineHeader>
               <TimelineContent hideLine={true}>
                 <CenteredColumn>
-                  <TimelineSectionHeading>Langar (food and prayers)</TimelineSectionHeading>
+                  <TimelineContentHeading>Langar (food and prayers)</TimelineContentHeading>
                   <AddressLine>Gurdwara Dasmesh Darbar</AddressLine>
                   <AddressLine>Rosebery Ave</AddressLine>
                   <AddressLine>London</AddressLine>
@@ -354,14 +375,14 @@ const Home: NextPage = () => {
           <TextBlock>
             <p>
               If you would like to send any flowers, then please send them to the below address either on the 27th or
-              28th January by 2pm
+              28th January by 12pm
             </p>
           </TextBlock>
           <AddressLine>Mrs Surrinderjit Kaur Samra</AddressLine>
-          <AddressLine>City of London Cemetery & Crematorium</AddressLine>
-          <AddressLine>Aldersbrook Road</AddressLine>
-          <AddressLine>London </AddressLine>
-          <AddressLine>E12 5DQ</AddressLine>
+          <AddressLine>Gilderson & Sons Funeral Directors</AddressLine>
+          <AddressLine>90/92 Ley St</AddressLine>
+          <AddressLine>Ilford </AddressLine>
+          <AddressLine>IG1 4BX</AddressLine>
         </Guttered>
         <Padder />
         <Guttered>
@@ -422,7 +443,8 @@ const Home: NextPage = () => {
 
           <TextBlock>
             <p>
-              If you would like to donate in memory of Mrs Surrinderjit Kaur Samra, then you can via this button below:{" "}
+              If you would like to donate to Dementia UK in memory of Mrs Surrinderjit Kaur Samra, then you can via this
+              button below
             </p>
           </TextBlock>
 
