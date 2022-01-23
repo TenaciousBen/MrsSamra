@@ -252,9 +252,9 @@ const Home: NextPage = () => {
             </CenteredText>
           </TextBlock>
         </Guttered>
+		<Padder />
         <Background>
           <Guttered>
-            <Padder />
             <SectionHeading>Service</SectionHeading>
             <TimelineContainer>
               <TimelineHeader>28th January 2022 at 2:15pm</TimelineHeader>
@@ -325,6 +325,7 @@ const Home: NextPage = () => {
             </TimelineContainer>
           </Guttered>
         </Background>
+		<Padder />
         <Guttered>
           <SectionHeading>Flowers</SectionHeading>
           <TextBlock>
@@ -370,6 +371,7 @@ const Home: NextPage = () => {
             )}
           </ImageGallery>
         </Guttered>
+		<Padder />
         <Background>
           <Guttered>
             <QuoteLeft>&quot;</QuoteLeft>
@@ -386,7 +388,7 @@ const Home: NextPage = () => {
             <QuoteRight>&quot;</QuoteRight>
           </Guttered>
         </Background>
-
+		<Padder />
         <Guttered>
           <SectionHeading>Donations</SectionHeading>
 
@@ -400,11 +402,6 @@ const Home: NextPage = () => {
             Donate
           </DonateButton>
         </Guttered>
-
-        {/* 
-
-		If you would like to donate in memory of Mrs Surrinderjit Kaur Samra, then you can via this button below: 
-*/}
       </Main>
 
       <Footer />

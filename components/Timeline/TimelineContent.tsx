@@ -23,7 +23,6 @@ const TimelineLine = styled.div`
   height: 600px;
   width: ${TIMELINE_LINE_WIDTH};
   background-color: #686868;
-  margin-left: 5px;
 `;
 
 const Content = styled.div`
