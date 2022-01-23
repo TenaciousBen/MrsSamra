@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 import TimelineHeader from "../components/Timeline/TimelineHeader";
 import TimelineContent from "../components/Timeline/TimelineContent";
 import TimelineContainer from "../components/Timeline/TimelineContainer";
-import ImageViewer from "react-simple-image-viewer";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 import { useCallback, useState } from "react";
 
 const MOBILE_WIDTH = "480px";
@@ -239,19 +240,14 @@ const DonateButton = styled.a`
 `;
 
 const Home: NextPage = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [photoIndex, setPhotoIndex] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const images = [...Array(30).keys()].map((i) => `./img/${i + 1}.jpg`);
-
-  const openImageViewer = useCallback((index) => {
-    setCurrentImage(index);
+  const openViewer = (imageIndex: number) => {
+    setPhotoIndex(imageIndex);
     setIsViewerOpen(true);
-  }, []);
-
-  const closeImageViewer = () => {
-    setCurrentImage(0);
-    setIsViewerOpen(false);
   };
+
   return (
     <Container>
       <Head>
@@ -398,7 +394,7 @@ const Home: NextPage = () => {
               <ImageContainer key={src}>
                 <img
                   src={src}
-                  onClick={() => openImageViewer(index)}
+                  onClick={() => openViewer(index)}
                   width="100%"
                   height="100%"
                   key={index}
@@ -409,15 +405,13 @@ const Home: NextPage = () => {
             ))}
 
             {isViewerOpen && (
-              <ImageViewer
-                src={images}
-                currentIndex={currentImage}
-                onClose={closeImageViewer}
-                disableScroll={true}
-                backgroundStyle={{
-                  backgroundColor: "rgba(0,0,0,0.9)",
-                }}
-                closeOnClickOutside={true}
+              <Lightbox
+                mainSrc={images[photoIndex]}
+                nextSrc={images[(photoIndex + 1) % images.length]}
+                prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+                onCloseRequest={() => setIsViewerOpen(false)}
+                onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+                onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
               />
             )}
           </ImageGallery>
