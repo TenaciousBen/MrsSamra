@@ -52,7 +52,7 @@ const Title = styled.h1`
 `;
 
 const HeroImage = styled.img`
-  width: 800px;
+  width: 600px;
   margin-top: 2rem;
 
   @media (max-width: ${MOBILE_WIDTH}) {
@@ -113,12 +113,14 @@ const MapSpacer = styled.div`
 `;
 
 const TimelineSectionHeading = styled.h3`
-  font-weight: normal;
-  text-decoration: underline;
   margin: 0;
 `;
 
-const TimelineContentHeading = styled.h4``;
+const TimelineContentHeading = styled.h4`
+  font-weight: normal;
+  text-decoration: underline;
+  font-size: 1.2rem;
+`;
 
 const MapSizer = styled.div`
   width: 600px;
